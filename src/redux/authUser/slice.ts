@@ -2,12 +2,14 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface InitialStateType {
+  loading?: boolean;
   username: string | null;
   email: string | null;
   token: string | null;
   id: string | null;
 }
 const initialState: InitialStateType = {
+  loading: true,
   username: null,
   email: null,
   token: null,
@@ -19,7 +21,8 @@ const authUser = createSlice({
   initialState,
   reducers: {
     setAuthUser(state: InitialStateType, action: PayloadAction<InitialStateType>) {
-      state.username = action.payload.username
+      state.loading = false;
+      state.username = action.payload.username;
       state.email = action.payload.email;
       state.token = action.payload.token;
       state.id = action.payload.id;
