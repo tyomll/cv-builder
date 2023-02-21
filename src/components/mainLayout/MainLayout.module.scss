@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: center;
+  background-color: #3a2523;
+  min-height: 100vh;
+
+  .container {
+    width: 90%;
+  }
+}

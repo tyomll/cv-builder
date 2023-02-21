@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import MainLayout from './components/mainLayout/MainLayout';
 import { useAuth } from './hooks/useAuth';
 import Builder from './pages/builder/Builder';
 import Home from './pages/home/Home';
@@ -17,11 +18,13 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<SignIn />} />
-      <Route path="/register" element={<SignUp />} />
-      <Route path="/builder" element={<PrivateRoutes />}>
-        <Route path="/builder" element={<Builder />} />
+      <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/builder" element={<PrivateRoutes />}>
+          <Route path="/builder" element={<Builder />} />
+        </Route>
       </Route>
     </Routes>
   );
