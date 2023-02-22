@@ -1,22 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
+import { auth } from '../../../firebase';
 import s from './Header.module.scss';
 
-const links = [
-  {
-    title: 'Templates',
-    link: 'templates',
-  },
-  {
-    title: 'Login',
-    link: 'login',
-  },
-  {
-    title: 'Register',
-    link: 'register',
-  },
-];
 const Header: React.FC = () => {
   return (
     <div className={s.root}>
@@ -27,13 +14,24 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className={s.links}>
-          {links.map((link) => {
-            return (
-              <Link to={link.link}>
-                <span>{link.title}</span>
+          <Link to="templates">
+            <span>Templates</span>
+          </Link>
+          {!auth.currentUser ? (
+            <>
+              {' '}
+              <Link to="login" className={s.login}>
+                <span>Login</span>
               </Link>
-            );
-          })}
+              <Link to="register" className={s.register}>
+                <span>Register</span>
+              </Link>
+            </>
+          ) : (
+            <Link to="profile" className={s.avatar}>
+              <img src="https://cdn-icons-png.flaticon.com/512/219/219988.png" alt="avatar" />
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Home from '../../pages/home/Home';
 import Header from './header/Header';
 import s from './MainLayout.module.scss';
@@ -8,7 +9,9 @@ const MainLayout: React.FC = () => {
     <div className={s.root}>
       <div className={s.container}>
         <Header />
-        <Home />
+        <div className={s.outlet}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

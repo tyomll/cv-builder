@@ -13,11 +13,12 @@ const signUpStyles = {
   alignItems: 'center',
   justifyContent: 'center',
   width: '100%',
+  height: 'calc(100vh - 100px)',
 };
 const content = {
   type: 'register',
   formHeading: 'Welcome!',
-  formHint: 'Register to access to all features of Socialsquare.',
+  formHint: 'Register to access to all features of Resumize.',
   btnText: 'Sign Up',
 };
 export const defaultAvatar =

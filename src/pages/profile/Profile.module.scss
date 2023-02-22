@@ -1,0 +1,23 @@
+.root {
+  .container {
+    .user {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 20px;
+      background-color: #241615;
+      gap: 30px;
+      .avatar {
+        width: 200px;
+        height: 200px;
+      }
+      .details {
+        color: #fff;
+
+        h4 {
+          color: #ffffff95;
+        }
+      }
+    }
+  }
+}

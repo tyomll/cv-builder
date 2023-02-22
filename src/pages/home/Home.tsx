@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cvVector from '../../assets/home-cv-vector.png';
 import s from './Home.module.scss';
 
@@ -14,7 +15,9 @@ const Home = () => {
             the crowd. Our powerful yet simple-to-use tool helps you create a custom CV in minutes,
             with no design skills needed.
           </p>
-          <button>Start Building CV</button>
+          <Link to="/templates">
+            <button>Start Building CV</button>
+          </Link>
         </div>
         <div className={s.image}>
           <img src={cvVector} alt="cv" />

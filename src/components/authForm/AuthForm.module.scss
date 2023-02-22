@@ -20,7 +20,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background-color: #fff;
+      background-color: #241615;
       border-radius: 15px;
       padding: 40px 20px 40px 20px;
 
@@ -31,10 +31,10 @@
         text-align: center;
         h2 {
           font-weight: 800;
-          color: #1d3a5f;
+          color: #fff;
         }
         span {
-          color: rgb(145, 164, 191);
+          color: rgba(255, 255, 255, 0.535);
         }
       }
       .form {
@@ -63,19 +63,20 @@
             gap: 15px;
 
             svg {
-              color: #1877f2;
+              color: #eaa242;
               margin-left: 15px;
             }
             input {
               width: 100%;
               height: 100%;
+              color: white;
               background-color: inherit;
               outline: none;
               border: none;
               font-size: 15px;
 
               &::placeholder {
-                color: rgb(145, 164, 191);
+                color: rgba(255, 255, 255, 0.535);
               }
             }
           }
@@ -83,12 +84,12 @@
             height: 50px;
             border: none;
             border-radius: 7px;
-            background-color: #1877f2;
+            background-color: #eaa242;
             color: white;
             cursor: pointer;
             transition: 0.3s;
             &:hover {
-              background-color: #1876f2e7;
+              background-color: #eaa142d9;
             }
           }
         }

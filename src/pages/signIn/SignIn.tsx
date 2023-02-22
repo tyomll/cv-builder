@@ -12,7 +12,7 @@ const signInStyles = {
   alignItems: 'center',
   justifyContent: 'center',
   width: '100%',
-  height: '100vh',
+  height: 'calc(100vh - 100px)',
 };
 const content = {
   type: 'login',
@@ -60,7 +60,6 @@ const SignIn: React.FC = () => {
 
   return (
     <div style={signInStyles}>
-      {auth.currentUser?.displayName}
       <AuthForm content={content} submitHandler={handleLogin} />
     </div>
   );
