@@ -1,3 +1,4 @@
+import { PDFViewer } from '@react-pdf/renderer';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './components/mainLayout/MainLayout';
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/templates" element={<Templates />} />
         <Route path="/" element={<PrivateRoutes />}>
           <Route path="/profile" element={<Profile />} />
+
           <Route path="/builder" element={<Builder />} />
         </Route>
       </Route>
