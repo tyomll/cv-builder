@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     width: '50%',
-    gap: 10,
+    gap: 5,
     fontSize: 15,
   },
   experience: {
