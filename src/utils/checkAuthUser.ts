@@ -7,6 +7,7 @@ export const checkAuthUser = () => {
   const unsubscribe = onAuthStateChanged(auth, (user) => {
     if (user) {
       const userData = {
+        
         username: user.displayName,
         email: user.email,
         token: user.refreshToken,

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.png';
-import { auth } from '../../../firebase';
-import s from './Header.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.png";
+import { auth } from "../../../firebase";
+import s from "./Header.module.scss";
 
 const Header: React.FC = () => {
   return (
@@ -14,12 +14,15 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className={s.links}>
-          <Link to="templates">
+          <Link to="/builder">
+            <span>Builder</span>
+          </Link>
+          <Link to="/templates">
             <span>Templates</span>
           </Link>
           {!auth.currentUser ? (
             <>
-              {' '}
+              {" "}
               <Link to="login" className={s.login}>
                 <span>Login</span>
               </Link>
@@ -29,7 +32,10 @@ const Header: React.FC = () => {
             </>
           ) : (
             <Link to="profile" className={s.avatar}>
-              <img src="https://cdn-icons-png.flaticon.com/512/219/219988.png" alt="avatar" />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/219/219988.png"
+                alt="avatar"
+              />
             </Link>
           )}
         </div>

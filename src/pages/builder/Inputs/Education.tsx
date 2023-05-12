@@ -1,20 +1,52 @@
-import React, { FC } from 'react';
-import s from '../Builder.module.scss';
-import { faAdd } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { ChangeEvent, FC } from "react";
+import s from "../Builder.module.scss";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IEmail {
   setEducation: any;
   education: any;
 }
 const Education: FC<IEmail> = ({ setEducation, education }) => {
+  const onEducationDateChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    setEducation(
+      education.map((item: any) => {
+        if (item.id === index) {
+          return { ...item, date: event.target.value };
+        } else {
+          return item;
+        }
+      })
+    );
+  };
+  const onEducationTitleChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    setEducation(
+      education.map((item: any) => {
+        if (item.id === index) {
+          return { ...item, title: event.target.value };
+        } else {
+          return item;
+        }
+      })
+    );
+  };
   return (
     <div className={s.education}>
       <div
         className={s.add}
         onClick={() => {
-          setEducation([...education, { date: '', email: '' }]);
-        }}>
+          setEducation([
+            ...education,
+            { id: education.length, date: "", title: "" },
+          ]);
+        }}
+      >
         <span>Education</span>
         <div>
           <FontAwesomeIcon icon={faAdd} />
@@ -27,12 +59,12 @@ const Education: FC<IEmail> = ({ setEducation, education }) => {
               <input
                 type="text"
                 placeholder="Date"
-                onChange={(e) => setEducation({ ...education[i], date: e.target.value })}
+                onChange={(e) => onEducationDateChange(e, i)}
               />
               <input
                 type="text"
-                placeholder="Email"
-                onChange={(e) => setEducation({ ...education[i], email: e.target.value })}
+                placeholder="Title"
+                onChange={(e) => onEducationTitleChange(e, i)}
               />
             </div>
           );

@@ -2,7 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface InitialStateType {
-  loading?: boolean;
+  loading: boolean;
   username: string | null;
   email: string | null;
   token: string | null;

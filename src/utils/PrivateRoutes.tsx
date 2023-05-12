@@ -1,5 +1,5 @@
-import { Outlet, Navigate } from 'react-router-dom';
-import { useAppSelector } from '../hooks/useRedux';
+import { Outlet, Navigate } from "react-router-dom";
+import { useAppSelector } from "../hooks/useRedux";
 
 const PrivateRoutes = () => {
   const loading = useAppSelector((state) => state.authUser.loading);
